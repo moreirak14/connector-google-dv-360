@@ -1,6 +1,7 @@
 import logging
 from enum import Enum
 from typing import Dict
+
 from src.services.uow import SqlAlchemyUnitOfWork
 
 _logger = logging.getLogger(__name__)

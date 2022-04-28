@@ -1,4 +1,5 @@
 from fastapi.routing import APIRouter
+
 from src.schemas.health_check import Message
 from src.services.query.health_check import HealthCheckServiceQuery, StatusCheck
 from src.services.uow import SqlAlchemyUnitOfWork
