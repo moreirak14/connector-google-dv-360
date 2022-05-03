@@ -1,4 +1,5 @@
 from pydantic import Field
+
 from src.schemas import CustomBaseModel
 
 
@@ -7,7 +8,9 @@ class ThirdPartyOnlyConfigSchema(CustomBaseModel):
 
 
 class AdServerConfigSchema(CustomBaseModel):
-    third_party_only_config: ThirdPartyOnlyConfigSchema = Field(alias="thirdPartyOnlyConfig")
+    third_party_only_config: ThirdPartyOnlyConfigSchema = Field(
+        alias="thirdPartyOnlyConfig"
+    )
 
 
 class GeneralConfigSchema(CustomBaseModel):
