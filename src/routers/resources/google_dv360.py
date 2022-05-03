@@ -14,8 +14,23 @@ google_router = APIRouter(prefix="/google-dv360", tags=["Google DV-360"])
 @google_router.get("/")
 def list_advertiser():
     service = get_service(version="v1")
-    request = service.advertisers().list(partnerId="", pageSize="5")
+    request = service.advertisers().list(partnerId="1359235", pageSize="5")
     return request.execute()
+
+
+# TODO: ENDPOINT PARA PEGAR INFORMAÇÕES DO ADVERTISER
+# https://developers.google.com/display-video/api/reference/rest/v1/advertisers#Advertiser
+@google_router.get("/advertiser")
+def get_advertiser(advertiser_id: str):
+    service = get_service(version="v1")
+    request = service.advertisers().advertiser.get(partnedId="1359235", advertiserId=advertiser_id)
+    return request
+
+# TODO: ENDPOINT PARA LISTAR AS CAMPANHAS
+# https://developers.google.com/display-video/api/reference/rest/v1/advertisers.campaigns/list
+
+# TODO: ENDPOINT PARA PEGAR INFORMAÇÕES DA CAMPANHA
+# https://developers.google.com/display-video/api/reference/rest/v1/advertisers.campaigns/get
 
 
 @google_router.post("/")
